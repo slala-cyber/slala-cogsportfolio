@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wedding Seating Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>.card { background: rgba(10,10,10,0.6); }</style>
+</head>
+<body class="bg-dark text-light">
+  <div class="container mt-5">
+    <div class="card shadow p-4">
+      <h2 class="text-center mb-4">Wedding Seating Planner</h2>
+      <p class="text-center">Click the button to calculate seating using <strong>prompt()</strong>.</p>
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg" onclick="calculateSeating()">Calculate Seating</button>
+      </div>
+      <div id="output" class="mt-4 text-center fs-4"></div>
+      <div class="text-center mt-3"><a class="btn btn-link text-light" href="../index.html">← Back to Portfolio</a></div>
+    </div>
+  </div>
+
+<script>
+function calculateSeating() {
+  let guests = parseInt(prompt("How many guests?"), 10);
+  let tables = parseInt(prompt("How many tables?"), 10);
+  if (isNaN(guests) || guests <= 0 || isNaN(tables) || tables <= 0) {
+    alert('Please enter valid positive integers for guests and tables.');
+    return;
+  }
+  let base = Math.floor(guests / tables);
+  let extra = guests % tables;
+  let tableSizes = [];
+  for (let i = 0; i < tables; i++) {
+    if (i < extra) tableSizes.push(base + 1); else tableSizes.push(base);
+  }
+  let counts = {};
+  for (let size of tableSizes) counts[size] = (counts[size] || 0) + 1;
+  let parts = [];
+  for (let size in counts) {
+    let tableCount = counts[size];
+    parts.push(`${tableCount} table${tableCount > 1 ? "s" : ""} of ${size}`);
+  }
+  let finalMessage = `Your ${guests} guests will be seated as follows: ${parts.join(", ")}.`;
+  alert(finalMessage);
+  document.getElementById('output').innerHTML = finalMessage;
+}
+</script>
+</body>
+</html>

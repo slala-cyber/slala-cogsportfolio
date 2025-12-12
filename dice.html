@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>COGS3 - Dice Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .game-container { max-width: 900px; margin: 50px auto; background: rgba(15,15,15,0.6); padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+    .dice img { width: 120px; }
+    h1 { color: #f1c40f; }
+  </style>
+</head>
+<body class="bg-dark text-light">
+  <div class="container game-container text-center">
+    <h1>Let's Roll the Dice!</h1>
+    <h4 class="mb-4">If the dice add to anything above 9, you win $5. If 5 or less, I win $5.</h4>
+
+    <div class="mb-3">
+      <button class="btn btn-warning btn-lg" onclick="letsPlay()">Let's Play</button>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="dice mr-3"><img class="img1" src="../images/dice-placeholder.png" alt="die1"></div>
+      <div class="dice"><img class="img2" src="../images/dice-placeholder.png" alt="die2"></div>
+    </div>
+
+    <h3 class="mt-4" id="result"></h3>
+    <a class="btn btn-link text-light mt-3" href="../index.html">← Back to Portfolio</a>
+  </div>
+
+<script>
+var die1, die2, dieSum, balance, banner, outcome;
+balance = 0;
+function rollDice() {
+  die1 = Math.floor(Math.random() * 6) + 1;
+  die2 = Math.floor(Math.random() * 6) + 1;
+  dieSum = die1 + die2;
+  document.querySelector('.img1').src = '../images/dice' + die1 + '.png';
+  document.querySelector('.img2').src = '../images/dice' + die2 + '.png';
+}
+function whoWon() {
+  if (dieSum <= 5) {
+    outcome = "You lose, please pay me $5.";
+    balance -= 5;
+  } else if (dieSum >= 9) {
+    outcome = "You win, I pay you $5!";
+    balance += 5;
+  } else {
+    outcome = "It's a draw — nobody wins or loses.";
+  }
+  banner = die1 + " + " + die2 + " = " + dieSum;
+}
+function letsPlay() {
+  var numRolls = parseInt(prompt("How many times do you want to play?"), 10);
+  if (isNaN(numRolls) || numRolls <= 0) {
+    alert("Please enter a valid positive number.");
+    return;
+  }
+  balance = 0;
+  for (var i = 1; i <= numRolls; i++) {
+    rollDice();
+    whoWon();
+  }
+  document.getElementById('result').innerHTML = banner + "<br>" + outcome + "<br><br>" +
+    "Total plays: " + numRolls + "<br>" +
+    "Final balance: $" + balance;
+}
+</script>
+</body>
+</html>
