@@ -1,63 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Shyla Lala — Portfolio</title>
-    <!-- Bootstrap 4 CDN -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- Bootstrap 4 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="bg-dark text-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <a class="navbar-brand ml-3" href="#">Shyla Lala</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ml-auto mr-3">
-          <li class="nav-item"><a class="nav-link" href="projects/dice.html">Dice Game</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects/wedding.html">Wedding Planner</a></li>
-          <li class="nav-item"><a class="nav-link" href="pdf/Resume_Redacted.pdf" target="_blank">Resume (PDF)</a></li>
-        </ul>
-      </div>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Your Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header class="container text-center hero py-5">
-      <h1 class="display-4">FILM PORTFOLIO</h1>
-      <p class="lead">Selected projects — cinematic, dark, and minimal.</p>
-    </header>
+    <!-- About Me Section -->
+    <section id="about" class="container my-5">
+        <h2 class="mb-4">About Me</h2>
+        <p>Write a short bio here. Include your background, skills, and interests.</p>
+    </section>
 
-    <main class="container mb-5">
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <div class="card card-dark h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Dice Game</h3>
-              <p class="card-text">A JavaScript dice betting game — UI + logic. Open as a separate page.</p>
-              <a class="mt-auto btn btn-outline-light" href="projects/dice.html">Open Dice Game</a>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container my-5">
+        <h2 class="mb-4">Portfolio / Projects</h2>
+        <div class="row">
+            <!-- Example Project Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/project1.jpg" class="card-img-top" alt="Project Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Project Title</h5>
+                        <p class="card-text">Brief description of the project.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
             </div>
-          </div>
+            <!-- Add more project cards as needed -->
         </div>
-        <div class="col-md-6 mb-4">
-          <div class="card card-dark h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Wedding Seating Planner</h3>
-              <p class="card-text">Seating distribution tool using prompt() to gather inputs.</p>
-              <a class="mt-auto btn btn-outline-light" href="projects/wedding.html">Open Wedding Planner</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+    </section>
 
-    <footer class="text-center py-4 text-muted">
-      &copy; Shyla Lala — Film Aesthetic Portfolio
+    <!-- Resume Section -->
+    <section id="resume" class="container my-5">
+        <h2 class="mb-4">Resume</h2>
+        <p>You can download my resume here:</p>
+        <a href="pdf/Resume_Redacted.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container my-5">
+        <h2 class="mb-4">Contact</h2>
+        <p>If you want to reach out, please contact me via [LinkedIn/GitHub/other].</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-3 text-center">
+        <p>&copy; 2025 Your Name</p>
     </footer>
 
+    <!-- Bootstrap 4 JS + dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
 </html>
